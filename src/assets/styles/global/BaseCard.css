@@ -1,0 +1,7 @@
+.base-card {
+  background: var(--color-card);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+
+}

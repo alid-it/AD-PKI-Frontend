@@ -1,0 +1,63 @@
+.base-btn {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.base-btn.primary {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.base-btn.primary:hover {
+  background-color: var(--color-primary-hover);
+}
+
+/* Secondary: Rahmen in --color-text-light, damit der Button klare Kanten hat.
+   --color-border wuerde nicht funktionieren, da es in beiden Modi der eigenen
+   Fuellung (--color-secondary) entspricht (Dark: beides #334155) -> unsichtbar. */
+.base-btn.secondary {
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+  border-color: var(--color-text-light);
+}
+
+.base-btn.secondary:hover {
+  background-color: var(--color-hover);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.base-btn.small {
+  padding: 6px 10px;
+  font-size: 12px;
+}
+
+.base-btn.success {
+  background-color: var(--color-success);
+  color: white;
+}
+
+.base-btn.success:hover {
+  background-color: var(--color-success);
+  filter: brightness(0.95);
+}
+
+.base-btn.danger {
+  background-color: var(--color-danger);
+  color: white;
+}
+
+.base-btn.danger:hover {
+  filter: brightness(0.95);
+}
+
+/* Reduced Motion respektieren */
+@media (prefers-reduced-motion: reduce) {
+  .base-btn {
+    transition: none;
+  }
+}

@@ -1,0 +1,124 @@
+.system-info {
+  /* Seitenhintergrund = --color-bg, damit die Cards (--color-card) sauber
+     darauf "aufliegen". Mit --color-surface-2 war die Flaeche im Dark Mode
+     heller als die Cards -> wirkte invertiert/komisch. */
+  background: var(--color-bg);
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.system-info h2 {
+  margin: 0 0 14px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+/* In system.css hinzufügen */
+.version-badge.status-warn {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+
+/* Card */
+.system-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-card);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Header */
+.system-table thead {
+  background: var(--color-surface-2);
+}
+
+.system-table th {
+  text-align: left;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-text-light);
+  padding: 14px 16px;
+}
+
+/* Rows */
+.system-table td {
+  padding: 14px 16px;
+  font-size: 14px;
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Hover Effekt */
+.system-table tbody tr {
+  transition: background 0.2s;
+}
+
+.system-table tbody tr:hover {
+  background: var(--color-surface-2);
+}
+
+/* Letzte Linie entfernen */
+.system-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Komponente Spalte */
+.system-table td:first-child {
+  font-weight: 500;
+}
+
+/* Version Badge */
+.version-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 8px;
+  background: #e0f2fe;
+  color: #0369a1;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.system-url {
+  font-size: 12px;
+  color: var(--color-text-light);
+  margin-top: 4px;
+  word-break: break-all;
+}
+
+.system-url a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.system-url a:hover {
+  text-decoration: underline;
+}
+
+/* 🔥 Status Farben verbessern */
+.status-ok {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.status-error {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.system-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.system-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+

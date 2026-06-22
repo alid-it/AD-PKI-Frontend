@@ -1,0 +1,321 @@
+/* =========================================
+   🔥 AUDIT LOGS
+   ========================================= */
+
+.auditlogs {
+  padding: 0;
+}
+
+.auditlogs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.auditlogs-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.auditlogs-total {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  background: var(--color-surface-2);
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-weight: 500;
+}
+
+/* =========================================
+   🔥 FILTER BAR
+   ========================================= */
+
+.auditlogs-filterbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.auditlogs-filterbar select,
+.auditlogs-filterbar input[type="date"] {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--color-border);
+  background: var(--color-card);
+  color: var(--color-text);
+  font-size: 0.875rem;
+  min-width: 160px;
+  cursor: pointer;
+}
+
+.auditlogs-filterbar select:focus,
+.auditlogs-filterbar input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.auditlogs-filter-reset {
+  padding: 8px 16px;
+  border-radius: 10px;
+  border: 1px solid #475569;
+  background: #334155;
+  color: white;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.auditlogs-filter-reset:hover {
+  background: #1e293b;
+  transform: translateY(-1px);
+}
+
+/* =========================================
+   🔥 TABLE
+   ========================================= */
+
+.auditlogs-table-wrap {
+  overflow-x: auto;
+  border-radius: 10px;
+  border: 1px solid var(--color-border);
+}
+
+.auditlogs-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.auditlogs-table thead {
+  background: var(--color-surface-2);
+}
+
+.auditlogs-table th {
+  text-align: left;
+  padding: 12px 16px;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-text-light);
+  border-bottom: 1px solid var(--color-border);
+  white-space: nowrap;
+}
+
+.auditlogs-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: middle;
+}
+
+.auditlogs-table tr:last-child td {
+  border-bottom: none;
+}
+
+.auditlogs-table tbody tr {
+  transition: background 0.15s ease;
+}
+
+.auditlogs-table tbody tr:hover td {
+  background: var(--color-surface-2);
+}
+
+/* =========================================
+   🔥 ACTION BADGE
+   ========================================= */
+
+.action-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+.action-badge.auth      { background: #dbeafe; color: #1d4ed8; }
+.action-badge.cert      { background: #dcfce7; color: #166534; }
+.action-badge.ca        { background: #fef9c3; color: #a16207; }
+.action-badge.user      { background: #f3e8ff; color: #7e22ce; }
+.action-badge.settings  { background: #ffedd5; color: #c2410c; }
+.action-badge.template  { background: #e0f2fe; color: #0369a1; }
+.action-badge.default   { background: var(--color-surface-2); color: var(--color-text-light); }
+
+/* =========================================
+   🔥 LOG ID
+   ========================================= */
+
+.log-id-cell {
+  font-family: monospace;
+  font-size: 0.72rem;
+  color: var(--color-text-light);
+  background: var(--color-surface-2);
+  padding: 3px 7px;
+  border-radius: 6px;
+  display: inline-block;
+  letter-spacing: 0.5px;
+}
+
+/* =========================================
+   🔥 META CELL
+   ========================================= */
+
+.meta-cell {
+  font-size: 0.78rem;
+  color: var(--color-text-light);
+  max-width: 280px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: help;
+}
+
+/* =========================================
+   🔥 PAGINATION
+   ========================================= */
+
+.auditlogs-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.auditlogs-pagination button {
+  padding: 6px 14px;
+  border-radius: 10px;
+  border: none;
+  background: var(--color-surface-2);
+  color: var(--color-text);
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.auditlogs-pagination button:hover:not(:disabled) {
+  background: #cbd5e1;
+}
+
+.auditlogs-pagination button.active {
+  background: #1e293b;
+  color: white;
+  font-weight: 700;
+}
+
+.auditlogs-pagination button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.auditlogs-pagination-info {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  padding: 0 8px;
+}
+
+/* =========================================
+   🔥 EMPTY / LOADING STATE
+   ========================================= */
+
+.auditlogs-empty {
+  text-align: center;
+  padding: 48px 20px;
+  color: var(--color-text-light);
+  font-size: 0.9rem;
+}
+
+.auditlogs-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 48px 20px;
+  color: var(--color-text-light);
+  font-size: 0.9rem;
+}
+
+.auditlogs-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--color-border);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Live Button */
+.auditlogs-live-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: var(--color-card);
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.auditlogs-live-btn.active {
+  border-color: #22c55e;
+  color: #166534;
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #cbd5e1;
+}
+
+.live-dot.active {
+  background: #22c55e;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* Neue Logs Badge */
+.auditlogs-new-badge {
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.auditlogs-new-badge:hover {
+  background: #bfdbfe;
+}
+
+/* Neue Zeile Animation */
+.log-row-new td {
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { background: #eff6ff; }
+  to { background: transparent; }
+}

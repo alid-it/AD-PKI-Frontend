@@ -1,0 +1,93 @@
+.branding {
+  padding: 24px;
+}
+
+.branding-title {
+  margin: 0 0 20px;
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: var(--color-text);
+}
+
+/* 🌗 Theme-Umschalter (Light / Dark Farben bearbeiten) */
+.branding-theme-switch {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.branding-theme-switch-label {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--color-text-light);
+}
+
+.branding-theme-tabs {
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px;
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+}
+
+.branding-theme-tab {
+  border: none;
+  background: transparent;
+  color: var(--color-text);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.branding-theme-tab:hover {
+  color: var(--color-primary);
+}
+
+.branding-theme-tab.active {
+  background: var(--color-card);
+  color: var(--color-primary);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.branding-preview-hint {
+  margin: 0 0 14px;
+  font-size: 0.82rem;
+  color: var(--color-text-light);
+}
+
+/* Farb-Zeilen */
+.color-input {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.color-input input[type="color"] {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  /* Im Dark Mode klare Kante geben, sonst verschwimmt der Swatch */
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-card);
+  cursor: pointer;
+}
+
+.branding-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+@media (max-width: 600px) {
+  .color-input {
+    flex-wrap: wrap;
+  }
+}

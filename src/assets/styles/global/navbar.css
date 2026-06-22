@@ -1,0 +1,333 @@
+.navbar {
+  height: 70px;
+  /* etwas höher */
+  background-color: var(--color-navbar);
+  color: var(--color-navbar-text);
+  border: 1px solid var(--color-border);
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 30px;
+
+  border-radius: 12px;
+  /* 🔥 abgerundet */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+  max-width: auto;
+  /* begrenzt Breite */
+  margin: 0 auto;
+  /* zentriert */
+}
+
+/* =========================================
+   🔥 NAVBAR BADGE
+   ========================================= */
+
+.navbar-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: #ef4444;
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 700;
+  margin-left: 6px;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+.navbar-badge-inline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: #ef4444;
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 700;
+  margin-left: 8px;
+}
+
+/* Logo */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navbar-logo {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.navbar-collapse {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: space-between;
+  margin-left: 24px;
+}
+
+/* Hamburger-Button (nur auf Mobile sichtbar) */
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.navbar-toggle-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  margin: 0 auto;
+  border-radius: 2px;
+  background: var(--color-navbar-text);
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* Center Bereich */
+.navbar-center {
+  display: flex;
+  align-items: center;
+}
+
+/* rechte Seite */
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+/* Links */
+.nav-item {
+  margin: 0 15px;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--color-navbar-text);
+  font-weight: 500;
+}
+
+/* Hover */
+.nav-item:hover {
+  color: var(--color-primary);
+}
+
+/* Active */
+.router-link-active {
+  border-bottom: 2px solid var(--color-primary);
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+}
+
+/* Dropdown rechts ausrichten */
+.dropdown-right {
+  right: 0;
+  left: auto;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 105%;
+
+  left: 50%;
+  /* 🔥 Start in Mitte */
+  transform: translateX(-50%);
+  /* 🔥 echte Zentrierung */
+
+  background: var(--color-card);
+  color: var(--color-text);
+
+  min-width: 180px;
+  border-radius: 8px;
+  padding: 8px 0;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 8px 12px;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+  background: var(--color-bg);
+}
+
+/* Hover öffnet Dropdown */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+/* =========================================
+   📱 MOBILE NAVBAR (<= 900px)
+   ========================================= */
+
+@media (max-width: 900px) {
+  .navbar {
+    height: auto;
+    min-height: 60px;
+    flex-wrap: wrap;
+    padding: 12px 18px;
+  }
+
+  .navbar-left {
+    flex: 1;
+    justify-content: space-between;
+  }
+
+  /* Hamburger sichtbar machen */
+  .navbar-toggle {
+    display: flex;
+  }
+
+  /* Aufklappbarer Bereich */
+  .navbar-collapse {
+    flex-basis: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    margin-left: 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.25s ease, margin-top 0.25s ease;
+  }
+
+  .navbar--open .navbar-collapse {
+    max-height: 80vh;
+    overflow-y: auto;
+    opacity: 1;
+    margin-top: 12px;
+  }
+
+  .navbar-center,
+  .navbar-right {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .nav-item {
+    margin: 0;
+    padding: 12px 6px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .router-link-active {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--color-primary);
+  }
+
+  /* Dropdowns inline statt Hover-Overlay */
+  .dropdown-menu {
+    position: static;
+    display: block;
+    transform: none;
+    min-width: 0;
+    margin-top: 6px;
+    padding: 4px 0 4px 14px;
+    background: transparent;
+    box-shadow: none;
+    color: var(--color-navbar-text);
+  }
+
+  .dropdown-menu a {
+    color: var(--color-navbar-text);
+    padding: 10px 8px;
+  }
+
+  .dropdown-menu a:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 6px;
+  }
+
+  /* Hamburger -> X Animation */
+  .navbar--open .navbar-toggle-bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .navbar--open .navbar-toggle-bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .navbar--open .navbar-toggle-bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+}
+
+/* =========================================
+   🌗 THEME-TOGGLE (runder Button)
+   ========================================= */
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-right: 12px;
+  padding: 0;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  /* rund */
+  background-color: var(--toggle-bg);
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  transition: background-color 0.3s ease, border-color 0.3s ease,
+    filter 0.2s ease;
+}
+
+.theme-toggle:hover {
+  filter: brightness(1.05);
+}
+
+/* Sichtbarer Fokus-State (Tastatur-Bedienung) */
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--toggle-focus);
+  outline-offset: 2px;
+}
+
+/* Sanfte Animation des Emojis beim Wechsel */
+.theme-toggle-icon {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle:active .theme-toggle-icon {
+  transform: rotate(30deg) scale(0.9);
+}
+
+/* Reduced Motion respektieren */
+@media (prefers-reduced-motion: reduce) {
+
+  .navbar,
+  .theme-toggle,
+  .theme-toggle-icon {
+    transition: none;
+  }
+}
+

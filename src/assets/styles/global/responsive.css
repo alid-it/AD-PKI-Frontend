@@ -1,0 +1,161 @@
+/* =========================================================
+   GLOBAL RESPONSIVE / MOBILE OPTIMIZATION
+   Wird als Letztes geladen und überschreibt gezielt
+   Desktop-Layouts für kleine Bildschirme.
+   ========================================================= */
+
+/* ------- Tablet & kleiner (<= 900px) ------- */
+@media (max-width: 900px) {
+  .layout {
+    padding: 16px;
+  }
+
+  .layout-content {
+    margin-top: 16px;
+  }
+
+  /* Mehrspaltige Grids -> 2 Spalten */
+  .dashboard-cards,
+  .notifications-grid,
+  .notifications-events-grid,
+  .dashboard-grid-3 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Zweispaltige Layouts -> 1 Spalte */
+  .acls-grid,
+  .ca-cards,
+  .system-grid,
+  .infra-dns-grid,
+  .infra-info-grid,
+  .modal-top-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Formular mit fixer rechter Spalte -> stapeln */
+  .form-layout {
+    flex-direction: column;
+  }
+
+  .form-right,
+  .form-left {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Feste Breiten aufheben */
+  .acls-role-create-actions {
+    min-width: 0 !important;
+  }
+
+  .column-search {
+    min-width: 0 !important;
+    width: 100% !important;
+  }
+}
+
+/* ------- Smartphone (<= 640px) ------- */
+@media (max-width: 640px) {
+  body {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  .layout {
+    padding: 12px;
+  }
+
+  .base-card {
+    padding: 16px;
+    border-radius: 10px;
+  }
+
+  /* Alle Grids einspaltig */
+  .dashboard-cards,
+  .dashboard-grid-3,
+  .settings-grid,
+  .security-grid,
+  .me-grid,
+  .notifications-grid,
+  .notifications-events-grid,
+  .acls-grid,
+  .ca-cards,
+  .system-grid,
+  .infra-dns-grid,
+  .infra-info-grid,
+  .modal-top-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Toolbars / Kopfzeilen umbrechen */
+  .auditlogs-header,
+  .card-header,
+  .column-bar,
+  .cert-actions,
+  .cert-actions-group,
+  .san-header,
+  .form-actions,
+  .form-actions-right,
+  .modal-actions,
+  .me-preference-row,
+  .security-toggle-row,
+  .notifications-event-row,
+  .notifications-toast-row {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* Buttons in Aktionsleisten volle Breite, leichter tippbar */
+  .form-actions .base-btn,
+  .form-actions-right .base-btn,
+  .modal-actions .base-btn,
+  .cert-actions .base-btn,
+  .cert-actions-group .base-btn {
+    flex: 1 1 auto;
+    min-height: 44px;
+  }
+
+  /* Modals an den Viewport anpassen */
+  .modal {
+    width: 100% !important;
+    max-width: calc(100vw - 24px) !important;
+    max-height: 88vh;
+    overflow-y: auto;
+  }
+
+  /* Eingaben groß genug, damit iOS nicht zoomt */
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+}
+
+/* =========================================================
+   TABELLEN: horizontal scrollbar statt überlaufend
+   Greift, wenn eine Tabelle direkt in einer Karte/einem
+   Container liegt — funktioniert ohne Markup-Änderung.
+   ========================================================= */
+@media (max-width: 760px) {
+  .base-table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+  }
+
+  .base-table thead,
+  .base-table tbody,
+  .base-table tr {
+    /* Tabellen-Layout im Block-Modus erhalten */
+    display: table;
+    width: 100%;
+    table-layout: auto;
+  }
+
+  .base-table th,
+  .base-table td {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+}

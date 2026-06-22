@@ -1,0 +1,94 @@
+/* =========================================
+   THEME-VARIABLEN
+   :root                = Light Mode (Default)
+   [data-theme="dark"]  = Dark Mode (überschreibt)
+   ========================================= */
+:root {
+  /* 🔹 Primary (Brand Farbe) */
+  --color-primary: #3b82f6;
+  --color-primary-hover: #2563eb;
+
+  /* 🔹 Secondary */
+  --color-secondary: #e5e7eb;
+
+  /* 🔹 Success */
+  --color-success: #22c55e;
+
+  /* 🔹 Danger */
+  --color-danger: #ef4444;
+
+  /* 🔹 Background */
+  --color-bg: #f5f6f8;
+  --color-card: #ffffff;
+
+  /* 🔹 Text */
+  --color-text: #111111;
+  --color-text-light: #64748b;
+
+  /* 🔹 Border */
+  --color-border: #e5e7eb;
+
+  /* 🔹 Navbar */
+  --color-navbar: #ffffff;
+  --color-navbar-text: #1e293b;
+
+  /* 🔹 Neutrale Flächen (für Panels, Inputs, Hover) */
+  --color-surface-2: #f1f5f9;
+  --color-input-bg: #ffffff;
+  --color-hover: #f1f5f9;
+
+  /* 🔹 Theme-Toggle */
+  --toggle-bg: #e5e7eb;
+  --toggle-focus: #3b82f6;
+}
+
+[data-theme="dark"] {
+  /* 🔹 Primary */
+  --color-primary: #60a5fa;
+  --color-primary-hover: #3b82f6;
+
+  /* 🔹 Secondary */
+  --color-secondary: #334155;
+
+  /* 🔹 Success */
+  --color-success: #22c55e;
+
+  /* 🔹 Danger */
+  --color-danger: #ef4444;
+
+  /* 🔹 Background */
+  --color-bg: #0f172a;
+  --color-card: #1e293b;
+
+  /* 🔹 Text */
+  --color-text: #f1f5f9;
+  --color-text-light: #94a3b8;
+
+  /* 🔹 Border */
+  --color-border: #334155;
+
+  /* 🔹 Navbar */
+  --color-navbar: #1e293b;
+  --color-navbar-text: #f1f5f9;
+
+  /* 🔹 Neutrale Flächen (für Panels, Inputs, Hover) */
+  --color-surface-2: #334155;
+  --color-input-bg: #0f172a;
+  --color-hover: #334155;
+
+  /* 🔹 Theme-Toggle */
+  --toggle-bg: #334155;
+  --toggle-focus: #60a5fa;
+}
+
+/* Weicher Farbwechsel beim Theme-Wechsel */
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Reduced Motion respektieren */
+@media (prefers-reduced-motion: reduce) {
+  body {
+    transition: none;
+  }
+}

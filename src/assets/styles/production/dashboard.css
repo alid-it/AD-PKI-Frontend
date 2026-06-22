@@ -1,0 +1,88 @@
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 🔥 4 nebeneinander */
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.dashboard-section {
+  margin-bottom: 20px;
+}
+.page-title {
+  margin-bottom: 20px;
+}
+
+.base-card h2 {
+  margin-bottom: 15px;
+}
+
+/* 3er Grid */
+.dashboard-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.system-status {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.system-status li {
+  margin-bottom: 10px;
+}
+
+.status {
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.status.ok {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.quick-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+}
+
+.ca-pyramid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Root */
+.ca-root {
+  padding: 10px 20px;
+  background: #1e293b;
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+/* Verbindung */
+.ca-line {
+  width: 2px;
+  height: 20px;
+  background: var(--color-border);
+  margin: 10px 0;
+  
+}
+
+/* Intermediates */
+.ca-intermediates {
+  display: flex;
+  gap: 40px;
+}
+
+.ca-intermediate {
+  padding: 10px 20px;
+  background: var(--color-surface-2);
+  border-radius: 8px;
+}
+

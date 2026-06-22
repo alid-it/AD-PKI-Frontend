@@ -1,0 +1,125 @@
+.me-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.me-card {
+  padding: 25px;
+}
+
+.me-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.me-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #1e293b;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 32px;
+}
+
+.me-role {
+  display: inline-block;
+
+  margin-top: 8px;
+
+  padding: 6px 12px;
+
+  border-radius: 999px;
+
+  background: #dbeafe;
+  color: #1d4ed8;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.me-grid {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+  gap: 20px;
+
+  margin-top: 20px;
+}
+
+.me-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.me-item label {
+  font-size: 13px;
+  color: var(--color-text-light);
+}
+
+.me-item span {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.permission-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  margin-top: 20px;
+}
+
+.permission-badge {
+  padding: 8px 14px;
+
+  border-radius: 10px;
+
+  background: #1e293b;
+  color: white;
+
+  font-size: 13px;
+}
+
+/* =========================================
+   🔥 BENACHRICHTIGUNGEN / PREFERENCE ROW
+   ========================================= */
+
+.me-preference-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 12px 0;
+}
+
+.me-preference-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.me-preference-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-text);
+}
+
+.me-preference-desc {
+  font-size: 0.82rem;
+  color: var(--color-text-light);
+}
+
+.me-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
